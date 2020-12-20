@@ -7,7 +7,8 @@
 ②安装vue-cli：命令行输入 `npm install -g @vue/cli`  
 补充教程： https://cli.vuejs.org/guide/installation.html
 ### 3. 基于vue-cli快速搭建项目——vue版Hello World
-命令行输入 `vue init webpack demo`，demo是项目名称  
+命令行输入 `vue init webpack test`，test是项目名称，配置详情如下：  
+![vue-cli配置](assets/test-set.png)
 浏览器输入 http://localhost:8080/#/ ，可以看到第一个vue页面  
 ![vue页面](assets/vue-helloworld.png)
 ### 4. 安装Cesium——三维空间解决方案  
