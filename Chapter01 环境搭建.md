@@ -12,7 +12,7 @@
 命令行输入 `npm run dev`启动项目，浏览器输入 http://localhost:8080/#/ ，可以看到第一个vue页面  
 ![vue页面](assets/vue-helloworld.png)
 ### 4. 安装Cesium——三维空间解决方案  
-命令行输入 `npm install cesium` 
+在当前项目的根目录打开命令行，输入 `npm install --save cesium` 
 ### 5. 引入Cesium——Cesium版Hello World  
 ①添加组件cesiumViewer.vue   
 ```
