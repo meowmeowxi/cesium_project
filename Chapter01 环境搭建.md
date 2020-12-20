@@ -9,7 +9,7 @@
 ### 3. 基于vue-cli快速搭建项目——vue版Hello World
 命令行输入 `vue init webpack test`，test是项目名称，配置详情如下：  
 ![vue-cli配置](assets/test-set.png)  
-浏览器输入 http://localhost:8080/#/ ，可以看到第一个vue页面  
+命令行输入 `npm run dev`启动项目，浏览器输入 http://localhost:8080/#/ ，可以看到第一个vue页面  
 ![vue页面](assets/vue-helloworld.png)
 ### 4. 安装Cesium——三维空间解决方案  
 命令行输入 `npm install cesium` 
@@ -48,6 +48,6 @@ export default new Router({
 })
 ```
 ### 6. 看见世界  
-命令行输入 `npm run serve`，再次进入 http://localhost:8080/#/ ，宇宙星辰在冲我们挥手  
+命令行输入 `npm run dev`，再次进入 http://localhost:8080/#/ ，宇宙星辰在冲我们挥手  
 ![cesium首页](assets/cesium-helloworld.png)
 注：有时候用npm run serve,有时候用npm run dev，取决于package.json中start的写法
