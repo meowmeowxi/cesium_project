@@ -41,8 +41,19 @@ export default {
 </script>
 ```
 ③样式调整   
-打开App.vue，注掉margin-top的样式（会好看一点点，不操作也不会影响功能）
+打开App.vue，删除img，注掉margin-top的样式（会好看一点点，不操作也不会影响功能）
 ```
+<template>
+  <div id="app">
+    <router-view/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
