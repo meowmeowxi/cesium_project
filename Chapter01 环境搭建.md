@@ -14,40 +14,47 @@
 ### 4. 安装Cesium——三维空间解决方案  
 在当前项目的根目录打开命令行，输入 `npm install --save cesium` 
 ### 5. 引入Cesium——Cesium版Hello World  
-①添加组件cesiumViewer.vue   
+①为Cesium添加静态文件  
+根目录新建文件夹static，拷贝node_modules/cesium/Build/Cesium文件夹至static，删除Cesium.d.ts和Cesium.js，结果如下图所示：  
+![cesium静态文件配置](assets/static-cesium.png)  
+补充教程：https://cesium.com/docs/tutorials/quick-start/#next-steps  
+②修改HelloWorld.vue  
 ```
-```
-②App.vue引入组件  
-```
+<template>
+  <div id="cesiumContainer"></div>
+</template>
 <script>
-import cesiumViewer from './components/cesiumViewer.vue'
+window.CESIUM_BASE_URL = "/static/Cesium/";
+import * as Cesium from "cesium";
+import "cesium/Build/Cesium/Widgets/widgets.css";
 export default {
-  name: 'App',
-  components: {
-    'cesiumViewer': cesiumViewer
-  }
-}
+  name: "HelloWorld",
+  mounted() {
+    this.viewer = new Cesium.Viewer("cesiumContainer", {
+      terrainProvider: Cesium.createWorldTerrain(),
+    });
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 ```
-③修改路由index.js  
+③样式调整   
+打开App.vue，注掉margin-top的样式（会好看一点点，不操作也不会影响功能）
 ```
-import Vue from 'vue'
-import Router from 'vue-router'
-import cesiumViewer from '@/components/cesiumViewer'
-
-Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'cesiumViewer',
-      component: cesiumViewer
-    }
-  ]
-})
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /*margin-top: 60px;*/
+}
+</style>
 ```
 ### 6. 看见世界  
-命令行输入 `npm run dev`，再次进入 http://localhost:8080/#/ ，宇宙星辰在冲我们挥手  
-![cesium首页](assets/cesium-helloworld.png)
+命令行输入 `npm run dev`，再次进入 http://localhost:8080/#/ ，they say Hello World！  
+![cesium首页](assets/cesium-hello.png)
 注：有时候用npm run serve,有时候用npm run dev，取决于package.json中start的写法
