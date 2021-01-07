@@ -2,7 +2,7 @@
 ### 1. 安装node.js——无情的下包机器
 ①下载并安装node包 https://nodejs.org/en/  
 ②命令行输入` node -v`查看node版本  
-②命令行输入`npm -v`查看npm版本  
+ 命令行输入`npm -v`查看npm版本  
 详细教程可参考 https://www.liaoxuefeng.com/wiki/1022910821149312/1023025597810528  
 ### 2. 安装vue和vue-cli——轻量实用的前端框架 
 ①安装vue：命令行输入 `npm install vue`  
